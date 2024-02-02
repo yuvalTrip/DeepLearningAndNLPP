@@ -1,0 +1,25 @@
+First Try:
+[[912  11]
+ [157  17]]
+The Accuracy of this model is: 0.8468550592525068
+the Classification Error for this model is: 0.15314494074749319
+The loss of this model is: 0.17866909753874202
+The loss of this model using Cross Entropy calcualtion is: 6.17102877314803
+The F1-Measure for this model is : 0.9156626506024096
+
+After viewing the results, we checked our data and found that our prediction values are not balanced.
+we ran the command - print(y.value_counts()) and got the following:
+0 means that there is no possiblity of getting heartdieases in the next 10 years.
+1 means that there is.
+TenYearCHD
+0    3099
+1     557
+
+Improvements we plan:
+#Consider maybe over-sampling.
+
+1. Loss Function Inverventions
+2. Convert the project to run with tensorflow
+
+Second Try:
+we improved ... 
