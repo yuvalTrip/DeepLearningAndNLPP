@@ -1,0 +1,8 @@
+First Try:
+[[912  11]
+ [157  17]]
+The Accuracy of this model is: 0.8468550592525068
+the Classification Error for this model is: 0.15314494074749319
+
+Second Try:
+we improved ... 
