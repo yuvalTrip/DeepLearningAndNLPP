@@ -1,4 +1,4 @@
-First Try:
+First Try - Logistic Regression:
 [[912  11]
  [157  17]]
 The Accuracy of this model is: 0.8468550592525068
@@ -15,11 +15,8 @@ TenYearCHD
 0    3099
 1     557
 
-Improvements we plan:
-#Consider maybe over-sampling.
 
-
-Second Try:
+Second Try - MLP :
 running MLP , with relu and sigmoid we got the following:
 
 69/69 [==============================] - 1s 5ms/step - loss: 1.0500 - accuracy: 0.8140 - val_loss: 0.8867 - val_accuracy: 0.8448
@@ -134,3 +131,6 @@ Validation Loss: 0.4724017381668091
 Validation Accuracy: 0.850806474685669
 
 we can see that there is a real Improvement in our loss and accuarcy , but as of validtaion loss we're lacking, well keep investiagting of why is that happening..
+
+Improvements we plan:
+#discuess this further on how should we improve the validation loss as its a bit high for now.
