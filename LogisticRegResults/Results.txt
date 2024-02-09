@@ -18,8 +18,6 @@ TenYearCHD
 Improvements we plan:
 #Consider maybe over-sampling.
 
-1. Loss Function Inverventions
-2. Convert the project to run with tensorflow
 
 Second Try:
 running MLP , with relu and sigmoid we got the following:
