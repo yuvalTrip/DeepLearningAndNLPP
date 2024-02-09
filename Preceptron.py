@@ -24,13 +24,13 @@ def perceptron():
     # Compile the model
     model.compile(optimizer='sgd', loss='binary_crossentropy')
 
-    # Train the model
-    """we started with 10 epoches and get 
-    The ultimate epochs number we arrive was 80 with loss of 0.4261, but we saw it converge from epoch 23 to this value.
-    
-    
+    # Train and improvement of the model
+    """we started with 10 epoches and get loss of 0.4296
+    we continue to increase the number of loss to see if we can achieve better value,and the conclusion was that  
+    the ultimate epochs number we arrive was 80 with loss of 0.4261, but we saw it converge from epoch 23 to this value.
+    Therefore we chose to put 25 ephocs.
     """
-    model.fit(data_x, data_y, epochs=10, batch_size=32)
+    model.fit(data_x, data_y, epochs=25, batch_size=32)
 
 if __name__ == "__main__":
     perceptron()
