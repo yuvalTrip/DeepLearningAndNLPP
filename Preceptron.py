@@ -1,3 +1,5 @@
+## first try with results ##
+
 # import pandas as pd
 # import numpy as np
 # import tensorflow as tf
@@ -50,7 +52,8 @@
 # print("Validation Accuracy:", val_accuracy)
 
 
-### Improved a bit with adding hidden layer with 32 neurons ###
+
+## after improving the model and adding to it data balancing and extra hidden layers, chaing epocs and batch size ##
 
 import pandas as pd
 import numpy as np
@@ -64,7 +67,7 @@ data = pd.read_csv('heart-disease-data.csv')
 
 # Data Preprocessing
 # Handle missing values
-data = data.dropna().reset_index(drop=True) # cleared NaN values and reset id's 
+data = data.dropna().reset_index(drop=True)
 
 # Split data into features and labels
 X = data.drop(columns=['TenYearCHD'])
@@ -82,15 +85,21 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_val_scaled = scaler.transform(X_val)
 
-# Define a more complex model architecture with regularization
+# Define a more complex model architecture
 model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=(X_train_scaled.shape[1],)),
-    tf.keras.layers.Dense(128, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.001)),
+     tf.keras.layers.Dense(1024, activation = 'relu'),
+    tf.keras.layers.Dropout(0.7),
+    tf.keras.layers.Dense(512, activation = 'relu'),
+    tf.keras.layers.Dropout(0.6),
+    tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dropout(0.4),
+    tf.keras.layers.Dense(64, activation='relu'),
     tf.keras.layers.Dropout(0.3),
-    tf.keras.layers.Dense(64, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.001)),
+    tf.keras.layers.Dense(32, activation='relu'),
     tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(32, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.001)),
-    tf.keras.layers.Dropout(0.1),
     tf.keras.layers.Dense(1, activation='sigmoid')
 ])
 
@@ -107,10 +116,12 @@ model.compile(optimizer=optimizer,
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
-# Train the model with adjusted hyperparameters
-history = model.fit(X_train_scaled, y_train, epochs=100, batch_size=64, validation_data=(X_val_scaled, y_val))
+# Train the model
+history = model.fit(X_train_scaled, y_train, epochs=500, batch_size=512, validation_data=(X_val_scaled, y_val))
 
 # Evaluate model performance on validation data
 val_loss, val_accuracy = model.evaluate(X_val_scaled, y_val)
 print("Validation Loss:", val_loss)
 print("Validation Accuracy:", val_accuracy)
+
+

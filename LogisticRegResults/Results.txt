@@ -124,3 +124,13 @@ Epoch 50/50
 46/46 [==============================] - 0s 864us/step - loss: 0.4032 - accuracy: 0.8469
 Validation Loss: 0.4032022953033447
 Validation Accuracy: 0.8468899726867676
+
+
+After adding many hidden layers to our model, running it on 500 epcos with batch of 512 and using Smote to increase and balacne our data :
+
+10/10 [==============================] - 0s 22ms/step - loss: 0.1718 - accuracy: 0.9312 - val_loss: 0.4724 - val_accuracy: 0.8508
+39/39 [==============================] - 0s 2ms/step - loss: 0.4724 - accuracy: 0.8508
+Validation Loss: 0.4724017381668091
+Validation Accuracy: 0.850806474685669
+
+we can see that there is a real Improvement in our loss and accuarcy , but as of validtaion loss we're lacking, well keep investiagting of why is that happening..
