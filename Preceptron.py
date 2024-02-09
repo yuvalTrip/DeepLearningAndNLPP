@@ -10,7 +10,11 @@ def perceptron():
     W1 = tf.Variable(tf.cast(tf.random.truncated_normal([features, hidden_layer_nodes], stddev=0.1), dtype=tf.float64))
     b1 = tf.Variable(tf.constant(0.1, shape=[hidden_layer_nodes], dtype=tf.float64))
 
-    z1 = tf.add(tf.matmul(x, W1), b1)
+    #z1 = tf.add(tf.matmul(x, W1), b1)###
+
+    first=tf.cast(tf.matmul(x, W1), tf.float64)
+    z1 = tf.add(first, b1)  # Cast the result of matmul to tf.float64
+
     a1 = tf.nn.relu(z1)
 
     W2 = tf.Variable(tf.cast(tf.random.truncated_normal([hidden_layer_nodes, 1], stddev=0.1), dtype=tf.float64))
