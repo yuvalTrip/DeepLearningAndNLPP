@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-data_NaN = pd.read_csv(".\heart-disease-data.csv") # FIX THIS to better relative 
+data_NaN = pd.read_csv("heart-disease-dataV2.csv") # FIX THIS to better relative 
 data = data_NaN.dropna().reset_index(drop=True) # cleared NaN values and reset id's 
 print(data)
 
@@ -12,8 +12,8 @@ print(data)
 #test = data.iloc[2200:3000] # other rows to test on the data set
 #running_data = data.iloc[3000:] #rest of the data for checking if the model predicts correctly
 
-y=data.TenYearCHD #strength is the label we want to predict
-x=data.drop('TenYearCHD',axis=1)#use drop function to take all other data in x
+y=data.HeartDisease #strength is the label we want to predict
+x=data.drop('HeartDisease',axis=1)#use drop function to take all other data in x
 
 print(y.value_counts())
 
@@ -58,7 +58,7 @@ print("The Accuracy of this model is:",accurlog) # accuracy
 print("the Classification Error for this model is:",1 - accurlog) #train error
 
 #compute the loss using MEAN SQUARE ERROR
-y_true = data.iloc[:data_rows].TenYearCHD # took the first 1097 rows to fit the y_pred size, this is according to the data-train-test split.
+y_true = data.iloc[:data_rows].HeartDisease # took the first 1097 rows to fit the y_pred size, this is according to the data-train-test split.
 y_pred = predictionLog #the acutal prediction 
 loss = np.mean((np.array(y_true) - np.array(y_pred))**2) #MSE, in tensorflow -> tf.reduce_mean(tf.pow(pred - y_, 2))
 print("The loss of this model using MSE calcualtion is:", loss)

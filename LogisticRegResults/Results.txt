@@ -16,6 +16,15 @@ TenYearCHD
 1     557
 
 
+new DATASET:
+
+The Accuracy of this model is: 0.9096710007204364
+the Classification Error for this model is: 0.09032899927956362
+The loss of this model using MSE calcualtion is: 0.1057669216782737
+The loss of this model using Cross Entropy calcualtion is: 3.653073133450594
+The F1-Measure for this model is : 0.9522046143513224
+
+
 Second Try - MLP :
 running MLP , with relu and sigmoid we got the following:
 
@@ -131,6 +140,13 @@ Validation Loss: 0.4724017381668091
 Validation Accuracy: 0.850806474685669
 
 we can see that there is a real Improvement in our loss and accuarcy , but as of validtaion loss we're lacking, well keep investiagting of why is that happening..
+
+
+new DATASET :
+
+
+
+
 
 Improvements we plan:
 #discuess this further on how should we improve the validation loss as its a bit high for now.
