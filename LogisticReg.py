@@ -69,7 +69,7 @@ epsilon = 1e-15  # Small constant to avoid log(0)
 y_pred_entropy = predictionLog #the acutal prediction 
 y_pred_entropy = np.clip(y_pred_entropy, epsilon, 1 - epsilon)  # Clip to avoid log(0)
 ce_loss = -np.mean(y_true * np.log(y_pred_entropy) + (1 - y_true) * np.log(1 - y_pred_entropy))
-ce_loss = log_loss(y_true, y_pred_entropy)
+#we can use also this func: ce_loss = log_loss(y_true, y_pred_entropy) which gives the same result
 print("The loss of this model using Cross Entropy calcualtion is:", ce_loss)
 
 # F1 Score:
