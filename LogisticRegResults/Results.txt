@@ -1,4 +1,4 @@
-First Try:
+First Try - Logistic Regression:
 [[912  11]
  [157  17]]
 The Accuracy of this model is: 0.8468550592525068
@@ -15,18 +15,17 @@ TenYearCHD
 0    3099
 1     557
 
-Improvements we plan:
-#Consider maybe over-sampling.
 
-1. Loss Function Inverventions
-2. Convert the project to run with tensorflow
+new DATASET:
 
-Second Try:
-we started with 20 epoches and get loss of 0.3882
-we continue to increase the number of loss to see if we can achieve better value,and the conclusion was that
-the ultimate epochs number we arrive was 200 with loss of 0.3843, but we saw it converge from epoch 50 to this value.
-Therefore we chose to put 50 ephocs.
+The Accuracy of this model is: 0.9096710007204364
+the Classification Error for this model is: 0.09032899927956362
+The loss of this model using MSE calcualtion is: 0.1057669216782737
+The loss of this model using Cross Entropy calcualtion is: 3.653073133450594
+The F1-Measure for this model is : 0.9522046143513224
 
+
+Second Try - MLP :
 running MLP , with relu and sigmoid we got the following:
 
 69/69 [==============================] - 1s 5ms/step - loss: 1.0500 - accuracy: 0.8140 - val_loss: 0.8867 - val_accuracy: 0.8448
@@ -131,3 +130,23 @@ Epoch 50/50
 46/46 [==============================] - 0s 864us/step - loss: 0.4032 - accuracy: 0.8469
 Validation Loss: 0.4032022953033447
 Validation Accuracy: 0.8468899726867676
+
+
+After adding many hidden layers to our model, running it on 500 epcos with batch of 512 and using Smote to increase and balacne our data :
+
+10/10 [==============================] - 0s 22ms/step - loss: 0.1718 - accuracy: 0.9312 - val_loss: 0.4724 - val_accuracy: 0.8508
+39/39 [==============================] - 0s 2ms/step - loss: 0.4724 - accuracy: 0.8508
+Validation Loss: 0.4724017381668091
+Validation Accuracy: 0.850806474685669
+
+we can see that there is a real Improvement in our loss and accuarcy , but as of validtaion loss we're lacking, well keep investiagting of why is that happening..
+
+
+new DATASET :
+
+
+
+
+
+Improvements we plan:
+#discuess this further on how should we improve the validation loss as its a bit high for now.
