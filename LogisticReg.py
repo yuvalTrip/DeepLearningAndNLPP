@@ -64,7 +64,7 @@ loss = np.mean((np.array(y_true) - np.array(y_pred))**2) #MSE, in tensorflow -> 
 print("The loss of this model using MSE calcualtion is:", loss)
 
 #compute Cross-Entropy loss function for binary classification.
-from sklearn.metrics import log_loss
+from sklearn.metrics import log_loss #used to compute the log loss or cross-entropy loss.
 epsilon = 1e-15  # Small constant to avoid log(0)
 y_pred_entropy = predictionLog #the acutal prediction 
 y_pred_entropy = np.clip(y_pred_entropy, epsilon, 1 - epsilon)  # Clip to avoid log(0)
