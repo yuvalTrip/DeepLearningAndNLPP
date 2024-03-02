@@ -8,15 +8,10 @@ data_NaN = pd.read_csv("heart-disease-dataV2.csv") # FIX THIS to better relative
 data = data_NaN.dropna().reset_index(drop=True) # cleared NaN values and reset id's 
 print(data)
 
-#train = data.iloc[:2200] # first rows to train the dataset
-#test = data.iloc[2200:3000] # other rows to test on the data set
-#running_data = data.iloc[3000:] #rest of the data for checking if the model predicts correctly
-
 y=data.HeartDisease #strength is the label we want to predict
 x=data.drop('HeartDisease',axis=1)#use drop function to take all other data in x
 
 print(y.value_counts())
-
 
 from sklearn.model_selection import train_test_split #to perform the splitting
 #train-test-split
