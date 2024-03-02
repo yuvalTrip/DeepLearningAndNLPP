@@ -31,7 +31,8 @@ X_test = np.expand_dims(X_test, axis=2)
 # Define the CNN model
 #Conv1D(64, kernel_size=3, activation='relu'), // without this, we got better results
 model = Sequential([
-    Conv1D(64, kernel_size=3, activation='relu', input_shape=(X_train.shape[1], 1)),
+    # Conv1D(64, kernel_size=3, activation='relu', input_shape=(X_train.shape[1], 1)),
+    Dense(64, activation='relu'),
     Flatten(),
     Dense(128, activation='relu'),
     Dropout(0.5),
