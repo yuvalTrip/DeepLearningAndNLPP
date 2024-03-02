@@ -163,7 +163,6 @@ X_val_scaled = scaler.transform(X_val)
 
 # Define the model with regularization and dropout
 model = tf.keras.Sequential([
-    tf.keras.layers.Input(shape=(X_train_scaled.shape[1],)),
     tf.keras.layers.Dense(64, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
     tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Dense(32, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01)),
