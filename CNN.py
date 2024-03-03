@@ -29,7 +29,6 @@ X_train = np.expand_dims(X_train, axis=2)  # Adding channel dimension
 X_test = np.expand_dims(X_test, axis=2)
 
 # Define the CNN model
-#Conv1D(64, kernel_size=3, activation='relu'), // without this, we got better results
 model = Sequential([
     Conv1D(64, kernel_size=3, activation='relu', input_shape=(X_train.shape[1], 1)),
     Flatten(),
